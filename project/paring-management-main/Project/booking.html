@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Selection</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image:url('https://wallpaperaccess.com/full/4327493.jpg');
+            background-size:cover;
+        }
+
+         header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+
+            
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+
+        main {
+            padding: 20px;
+        }
+
+        .parking-lot {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            margin: 10px;
+            cursor: pointer;
+            line-height: 120px;
+            border-radius:20px
+        }
+
+        .selected {
+            background-color: #4caf50;
+            color: #fff;
+        }    
+        button {
+            padding: 10px 10px;
+            font-size: 13px;
+            cursor: pointer;
+            background-color: #1ecf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <h1 align="center" style="color:white;">Welcome to Parking Management System</h1>
+    </header>
+
+    
+    <nav>
+        <a href="userdetails.html">User Details</a>
+        <a href="booking.html">Booking</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="home.html">Log Out</a>
+    </nav>
+    <h1 style="color:white; text-align:center;"><br>Select a Parking Lot<br></h1>
+
+    
+    <div id="parking-lots">
+        
+        <div class="parking-lot" onclick="selectParkingLot(1)">PL 1</div>
+        <div class="parking-lot" onclick="selectParkingLot(2)">PL 2</div>
+        <div class="parking-lot" onclick="selectParkingLot(3)">PL 3</div>
+        <div class="parking-lot" onclick="selectParkingLot(4)">PL 4</div>
+        <div class="parking-lot" onclick="selectParkingLot(5)">PL 5</div>
+        <div class="parking-lot" onclick="selectParkingLot(6)">PL 6</div>
+        <div class="parking-lot" onclick="selectParkingLot(7)">PL 7</div>
+        <div class="parking-lot" onclick="selectParkingLot(8)">PL 8</div>
+        <div class="parking-lot" onclick="selectParkingLot(9)">PL 9</div>
+        <div class="parking-lot" onclick="selectParkingLot(10)">PL 10</div>
+        <div class="parking-lot" onclick="selectParkingLot(11)">PL 11</div>
+        <div class="parking-lot" onclick="selectParkingLot(12)">PL 12</div>
+        <div class="parking-lot" onclick="selectParkingLot(13)">PL 13</div>
+        <div class="parking-lot" onclick="selectParkingLot(14)">PL 14</div>
+        <div class="parking-lot" onclick="selectParkingLot(15)">PL 15</div>
+        <div class="parking-lot" onclick="selectParkingLot(16)">PL 16</div>
+        <div class="parking-lot" onclick="selectParkingLot(17)">PL 17</div>
+        <div class="parking-lot" onclick="selectParkingLot(18)">PL 18</div>
+        <div class="parking-lot" onclick="selectParkingLot(19)">PL 19</div>
+        <div class="parking-lot" onclick="selectParkingLot(20)">PL 20</div>
+    </div> 
+
+  
+    <div id="selected-info">
+        <p style="color:white; text-align:center;" ><br><br><br><br><br>You selected Parking Lot <span id="selected-lot">None</span>.</p>
+    </div>
+
+    <script>
+        
+        function selectParkingLot(lotNumber) {
+            
+            var parkingLots = document.querySelectorAll('.parking-lot');
+            parkingLots.forEach(function (lot) {
+                lot.classList.remove('selected');
+            });
+
+            
+            var selectedLot = document.getElementById('selected-lot');
+            selectedLot.textContent = lotNumber;
+            var selectedParkingLot = document.querySelector('.parking-lot:nth-child(' + lotNumber + ')');
+            selectedParkingLot.classList.add('selected');
+        }
+    </script>
+    <form action="details.html">
+    <button style="border-radius: 5px;font-size:medium;" > Confirm </button>
+    </form>
+</body>
+</html>
